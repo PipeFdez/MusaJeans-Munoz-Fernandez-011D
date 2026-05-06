@@ -25,5 +25,5 @@ public class Inventario {
     private Long jeanId;
 
     @Transient
-    private Object jean;
+    private Object datosJean;
 }
