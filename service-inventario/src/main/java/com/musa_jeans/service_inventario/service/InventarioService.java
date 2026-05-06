@@ -37,7 +37,7 @@ public class InventarioService {
             try{
                 Object jean = webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8081/api/v1/jean/" + inventario.getJeanId())
+                .uri("http://localhost:8081/jeans/" + inventario.getJeanId())
                 .retrieve()
                 .bodyToMono(Object.class)
                 .block();
@@ -48,6 +48,10 @@ public class InventarioService {
             }
         }
         return inventario;
+    }
+
+    public Inventario guardarInventario(Inventario inventario){
+        return inventarioRepository.save(inventario);
     }
 }
 
