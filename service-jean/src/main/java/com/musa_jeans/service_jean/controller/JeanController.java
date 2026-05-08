@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,10 +40,32 @@ public class JeanController {
         return ResponseEntity.ok(jeanService.guardar(jean));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Jean> actualizarJean(@PathVariable Long id, @RequestBody Jean jeanActualizado) {
+        Jean jean = jeanService.buscarPorId(id).orElse(null);
+
+        if (jean != null) {
+
+            jean.setPrecio(jeanActualizado.getPrecio());
+            jean.setDescripcion(jeanActualizado.getDescripcion());
+
+            jeanService.guardar(jean);
+            return ResponseEntity.ok(jean);
+        }
+
+        return ResponseEntity.notFound().build();
+    }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        jeanService.eliminar(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> eliminar(@PathVariable Long id) {
+        Jean jean = jeanService.buscarPorId(id).orElse(null);
+
+        if (jean != null) {
+            jeanService.eliminar(id);
+            return ResponseEntity.ok("Jean eliminado");
+        }
+
+        return ResponseEntity.notFound().build();
     }
 
     @GetMapping("/marca/{nombre}")

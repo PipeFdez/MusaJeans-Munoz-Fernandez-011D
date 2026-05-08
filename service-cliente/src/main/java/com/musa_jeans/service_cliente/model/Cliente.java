@@ -22,7 +22,7 @@ public class Cliente {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private int rut;
+    private String rut;
 
     private String nombre;
     private String correo;
