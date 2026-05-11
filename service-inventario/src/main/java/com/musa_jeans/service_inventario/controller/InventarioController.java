@@ -14,7 +14,7 @@ import com.musa_jeans.service_inventario.model.Inventario;
 import com.musa_jeans.service_inventario.service.InventarioService;
 
 @RestController
-@RequestMapping("/inventario")
+@RequestMapping("api/v1/inventario")
 public class InventarioController {
 
     @Autowired
