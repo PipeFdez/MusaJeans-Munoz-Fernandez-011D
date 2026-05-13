@@ -8,27 +8,37 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: pacientes-service
+        - id: service-jean
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/jean/**
 
-        - id: gestion-service
+        - id: service-marca
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/marca/**
+
+        - id: service-modelo
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/modelo/**
+
+        - id: service-inventario
           uri: http://localhost:8082
           predicates:
             - Path=/api/v1/inventario/**
 
-        - id: pacientes-service
+        - id: service-cliente
           uri: http://localhost:8083
           predicates:
             - Path=/api/v1/cliente/**
 
-        # - id: gestion-service
-        #   uri: http://localhost:8084
-        #   predicates:
-        #     - Path=/api/v1/venta/**
+        - id: service-carrito
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/v1/carrito/**
 
-        # - id: gestion-service
-        #   uri: http://localhost:8085
-        #   predicates:
-        #     - Path=/api/v1/carrito/**
+        - id: service-producto-carrito
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/v1/producto-carrito/**

@@ -16,7 +16,7 @@ import com.musa_jeans.service_jean.model.Marca;
 import com.musa_jeans.service_jean.service.MarcaService;
 
 @RestController
-@RequestMapping("/marca")
+@RequestMapping("api/v1/marca")
 public class MarcaController {
     
     @Autowired

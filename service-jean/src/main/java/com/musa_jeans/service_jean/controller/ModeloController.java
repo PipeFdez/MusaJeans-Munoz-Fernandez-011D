@@ -16,7 +16,7 @@ import com.musa_jeans.service_jean.model.Modelo;
 import com.musa_jeans.service_jean.service.ModeloService;
 
 @RestController
-@RequestMapping("/modelo")
+@RequestMapping("api/v1/modelo")
 public class ModeloController {
 
     @Autowired
