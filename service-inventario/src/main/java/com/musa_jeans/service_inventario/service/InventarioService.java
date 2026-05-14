@@ -62,6 +62,10 @@ public List<Inventario> listarTodoEnriquecido() {
         return inventarioRepository.save(inventario);
     }
 
+    public void eliminar(Long idInventario){
+        inventarioRepository.deleteById(idInventario);
+    }
+
 }
 
 
