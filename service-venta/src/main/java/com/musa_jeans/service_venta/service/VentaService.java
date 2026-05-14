@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import com.musa_jeans.service_venta.model.DetalleVenta;
 import com.musa_jeans.service_venta.model.Venta;
@@ -11,6 +12,9 @@ import com.musa_jeans.service_venta.repository.VentaRepository;
 
 @Service
 public class VentaService {
+
+    @Autowired
+    private WebClient.Builder webClientBuilder;
 
     @Autowired
     private VentaRepository ventaRepository;
@@ -48,6 +52,20 @@ public class VentaService {
         List<DetalleVenta> detalles = detalleVentaService.buscarPorVenta(venta.getIdVenta());
         venta.setDetalles(detalles);
 
+        if (venta.getRutCliente() != null) {
+            try {
+                Object cliente = webClientBuilder.build()
+                        .get()
+                        .uri("http://localhost:8083/api/v1/cliente/" + venta.getRutCliente())
+                        .retrieve()
+                        .bodyToMono(Object.class)
+                        .block();
+
+                venta.setDatosCliente(cliente);
+            } catch (Exception e) {
+                venta.setDatosCliente("Información no disponible");
+            }
+        }
         return venta;
     }
 

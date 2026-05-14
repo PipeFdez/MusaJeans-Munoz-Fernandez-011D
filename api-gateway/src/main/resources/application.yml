@@ -42,3 +42,13 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/api/v1/producto-carrito/**
+
+        - id: service-venta
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/v1/venta/**
+
+        - id: service-detalle-venta
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/v1/detalle-venta/**

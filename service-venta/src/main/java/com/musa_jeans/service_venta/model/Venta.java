@@ -26,8 +26,12 @@ public class Venta {
     private Long idVenta;
     private Date fecha;
     private int total;
+    private String rutCliente;
 
     @Transient
     private List<DetalleVenta> detalles;
+
+    @Transient
+    private Object datosCliente;
 
 }
