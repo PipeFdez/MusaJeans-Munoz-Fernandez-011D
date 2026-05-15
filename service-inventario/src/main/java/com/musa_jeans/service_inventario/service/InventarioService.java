@@ -41,11 +41,7 @@ public List<Inventario> listarTodoEnriquecido() {
             try{
                 Object jean = webClientBuilder.build()
                 .get()
-<<<<<<< HEAD
-                .uri("http://localhost:8081/jeans/" + inventario.getJeanId())
-=======
                 .uri("http://localhost:8081/api/v1/jeans/" + inventario.getJeanId())
->>>>>>> service-inventario
                 .retrieve()
                 .bodyToMono(Object.class)
                 .block();
@@ -58,11 +54,6 @@ public List<Inventario> listarTodoEnriquecido() {
         return inventario;
     }
 
-<<<<<<< HEAD
-    public Inventario guardarInventario(Inventario inventario){
-        return inventarioRepository.save(inventario);
-    }
-=======
     public Inventario registrarInventario(Inventario inventario) {
         return inventarioRepository.save(inventario);
     }
@@ -75,7 +66,6 @@ public List<Inventario> listarTodoEnriquecido() {
         inventarioRepository.deleteById(idInventario);
     }
 
->>>>>>> service-inventario
 }
 
 
