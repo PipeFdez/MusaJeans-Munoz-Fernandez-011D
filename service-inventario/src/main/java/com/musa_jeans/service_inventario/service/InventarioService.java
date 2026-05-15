@@ -41,7 +41,7 @@ public List<Inventario> listarTodoEnriquecido() {
             try{
                 Object jean = webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8081/api/v1/jeans/" + inventario.getJeanId())
+                .uri("http://localhost:8081/api/v1/jean/" + inventario.getJeanId())
                 .retrieve()
                 .bodyToMono(Object.class)
                 .block();
