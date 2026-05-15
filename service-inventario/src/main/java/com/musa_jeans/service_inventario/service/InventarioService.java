@@ -18,8 +18,12 @@ public class InventarioService {
     @Autowired
     private WebClient.Builder webClientBuilder;
 
-    public List <Inventario> listarPorNombre(){
-        return inventarioRepository.findAll();
+public List<Inventario> listarTodoEnriquecido() {
+        List<Inventario> lista = inventarioRepository.findAll();
+
+            lista.forEach(this::enriquecerConJean);
+        
+        return lista;
     }
 
     public Inventario obtenerInventarioCompleto(Long id){
@@ -37,7 +41,11 @@ public class InventarioService {
             try{
                 Object jean = webClientBuilder.build()
                 .get()
+<<<<<<< HEAD
                 .uri("http://localhost:8081/jeans/" + inventario.getJeanId())
+=======
+                .uri("http://localhost:8081/api/v1/jeans/" + inventario.getJeanId())
+>>>>>>> service-inventario
                 .retrieve()
                 .bodyToMono(Object.class)
                 .block();
@@ -50,9 +58,24 @@ public class InventarioService {
         return inventario;
     }
 
+<<<<<<< HEAD
     public Inventario guardarInventario(Inventario inventario){
         return inventarioRepository.save(inventario);
     }
+=======
+    public Inventario registrarInventario(Inventario inventario) {
+        return inventarioRepository.save(inventario);
+    }
+
+    public Inventario guardar(Inventario inventario) {
+        return inventarioRepository.save(inventario);
+    }
+
+    public void eliminar(Long idInventario){
+        inventarioRepository.deleteById(idInventario);
+    }
+
+>>>>>>> service-inventario
 }
 
 

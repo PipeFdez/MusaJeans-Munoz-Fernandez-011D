@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PutMapping;
+=======
+>>>>>>> service-inventario
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +20,11 @@ import com.musa_jeans.service_jean.model.Jean;
 import com.musa_jeans.service_jean.service.JeanService;
 
 @RestController
+<<<<<<< HEAD
 @RequestMapping("api/v1/jean")
+=======
+@RequestMapping("/api/v1/jeans")
+>>>>>>> service-inventario
 public class JeanController {
 
     @Autowired
@@ -40,6 +47,7 @@ public class JeanController {
         return ResponseEntity.ok(jeanService.guardar(jean));
     }
 
+<<<<<<< HEAD
     @PutMapping("/{id}")
     public ResponseEntity<Jean> actualizarJean(@PathVariable Long id, @RequestBody Jean jeanActualizado) {
         Jean jean = jeanService.buscarPorId(id).orElse(null);
@@ -66,6 +74,12 @@ public class JeanController {
         }
 
         return ResponseEntity.notFound().build();
+=======
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        jeanService.eliminar(id);
+        return ResponseEntity.noContent().build();
+>>>>>>> service-inventario
     }
 
     @GetMapping("/marca/{nombre}")
