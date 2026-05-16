@@ -59,7 +59,7 @@ Cada microservicio posee:
 
 # Datos de prueba
 
-#Cliente
+# Cliente
 {
   "rut": "20051806-3",
   "nombre": "Felipe Fernández",
@@ -67,19 +67,19 @@ Cada microservicio posee:
   "direccion": "La galaxia #162, Maipú"
 }
 
-#Modelo
+# Modelo
 {
   "id" : 1,
   "nombre": "Skinny"
 }
 
-#Marca
+# Marca
 {
   "id" : 1,
   "nombre": "Levis"
 }
 
-#Jean
+# Jean
 {
   "precio": 29990,
   "color": "Azul",
