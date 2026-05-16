@@ -96,9 +96,9 @@ Cada microservicio posee:
 
 # Inventario
 {
-  "stock": 25,
-  "jeanId": 1
-} 
+   "stock": "200",
+   "jeanId": 1
+}
 
 # Carrito
 {
