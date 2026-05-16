@@ -96,7 +96,7 @@ Cada microservicio posee:
 
 # Inventario
 {
-   "stock": "200",
+   "stock": 200,
    "jeanId": 1
 }
 
