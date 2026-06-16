@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,13 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.musa_jeans.service_jean.model.Jean;
 import com.musa_jeans.service_jean.service.JeanService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("api/v1/jean")
+@Tag(name = "Jean", description = "Operaciones relacionadas con la gestión de Jeans")
 public class JeanController {
 
     @Autowired
     private JeanService jeanService;
-
+    
+    @Operation(summary = "Obtener todos los jeans", description = "Retorna una lista completa con todos los jeans registrados")
     @GetMapping
     public List<Jean> listar() {
         return jeanService.listarTodos();

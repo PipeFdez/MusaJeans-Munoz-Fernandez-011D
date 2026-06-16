@@ -7,11 +7,29 @@ spring:
 
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:8080"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+
       routes:
+
         - id: service-jean
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/jean/**
+
+        - id: jean-docs
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/jean/v3/api-docs
 
         - id: service-marca
           uri: http://localhost:8081
@@ -28,10 +46,20 @@ spring:
           predicates:
             - Path=/api/v1/inventario/**
 
+        - id: inventario-docs
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/inventario/v3/api-docs
+
         - id: service-cliente
           uri: http://localhost:8083
           predicates:
             - Path=/api/v1/cliente/**
+
+        - id: cliente-docs
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/v1/cliente/v3/api-docs
 
         - id: service-carrito
           uri: http://localhost:8084
@@ -52,3 +80,20 @@ spring:
           uri: http://localhost:8085
           predicates:
             - Path=/api/v1/detalle-venta/**
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: Servicio Jean
+        url: /api/v1/jean/api-docs
+
+      - name: Servicio Inventario
+        url: /api/v1/inventario/api-docs
+
+      - name: Servicio Cliente
+        url: /api/v1/cliente/api-docs

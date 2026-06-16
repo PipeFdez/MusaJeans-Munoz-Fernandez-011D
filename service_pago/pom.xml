@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.14</version>
+		<version>3.5.15</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.musa_jeans</groupId>
-	<artifactId>service-inventario</artifactId>
+	<artifactId>service_pago</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>service-inventario</name>
+	<name>service_pago</name>
 	<description/>
 	<url/>
 	<licenses>
@@ -34,13 +34,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.7.0</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
