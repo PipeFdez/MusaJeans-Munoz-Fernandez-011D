@@ -1,0 +1,45 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceDeseosApplication<service-deseos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_deseos.ServiceDeseosApplication",
+            "projectName": "service-deseos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=62697 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=service-deseos"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceJeanApplication<service-jean>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_jean.ServiceJeanApplication",
+            "projectName": "service-jean",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceClienteApplication<service-cliente>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_cliente.ServiceClienteApplication",
+            "projectName": "service-cliente",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiGatewayApplication<api-gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.api_gateway.ApiGatewayApplication",
+            "projectName": "api-gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
