@@ -38,22 +38,4 @@ public class PagoService {
     public List<Pago> buscarPorEstado(String estado) {
         return pagoRepository.findByEstadoIgnoreCase(estado);
     }
-
-    public Pago obtenerCompleto(Long id) {
-        Pago pago = pagoRepository.findById(id).orElse(null);
-
-        if (pago != null) {
-
-            Venta venta = webClientBuilder.build()
-                    .get()
-                    .uri("http://localhost:8084/ventas/" + pago.getVentaId())
-                    .retrieve()
-                    .bodyToMono(Venta.class)
-                    .block();
-
-            pago.setVenta(venta);
-        }
-        return pago;
-    }
-
 }

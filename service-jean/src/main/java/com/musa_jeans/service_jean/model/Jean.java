@@ -32,6 +32,7 @@ public class Jean {
     @Schema(description = "Talla en formato de letras", example = "XL")
     private String talla;
     
+    @Schema(description = "Tiro en formato string", example = "Corto")
     private String tiro;
     private String descripcion;
     

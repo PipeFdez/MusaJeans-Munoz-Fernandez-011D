@@ -1,5 +1,6 @@
 package com.musa_jeans.service_pago.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,11 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Table(name = "pago")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "Modelo que representa el pago")
 public class Pago {
 
     @Id

@@ -35,6 +35,7 @@ public class JeanController {
         return jeanService.listarTodos();
     }
 
+    @Operation(summary = "Obtener un jean por su ID", description = "Retorna una lista con todos los datos de un jean")
     @GetMapping("/{id}")
     public ResponseEntity<Jean> obtener(@PathVariable Long id) {
         return jeanService.buscarPorId(id)
@@ -42,17 +43,18 @@ public class JeanController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @Operation(summary = "Registra un jean en la base de datos", description = "Guarda un jean en la base de datos")
     @PostMapping
     public ResponseEntity<Jean> guardar(@RequestBody Jean jean) {
         return ResponseEntity.ok(jeanService.guardar(jean));
     }
 
+    @Operation(summary = "Editar los datos del jean", description = "Edita todos los datos del jean, buscando por ID")
     @PutMapping("/{id}")
     public ResponseEntity<Jean> actualizarJean(@PathVariable Long id, @RequestBody Jean jeanActualizado) {
         Jean jean = jeanService.buscarPorId(id).orElse(null);
 
         if (jean != null) {
-
             jean.setPrecio(jeanActualizado.getPrecio());
             jean.setDescripcion(jeanActualizado.getDescripcion());
 
@@ -63,6 +65,7 @@ public class JeanController {
         return ResponseEntity.notFound().build();
     }
 
+    @Operation(summary = "Borrar un jean", description = "Borra un jean por su ID")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         Jean jean = jeanService.buscarPorId(id).orElse(null);
@@ -75,6 +78,7 @@ public class JeanController {
         return ResponseEntity.notFound().build();
     }
 
+    @Operation(summary = "Obtener todos los jeans por marca", description = "Retonar una lista con todos los jeans de una marca")
     @GetMapping("/marca/{nombre}")
     public ResponseEntity<List<Jean>> buscarPorMarcaNombre(@PathVariable String nombre) {
         List<Jean> listaJeans = jeanService.buscarPorMarcaNombre(nombre);
@@ -86,6 +90,7 @@ public class JeanController {
         return ResponseEntity.ok(listaJeans);
     }
 
+    @Operation(summary = "Obtener todos los jeans por una talla", description = "Retorna una lista con todos los jeans por talla (XS, M, XL...)")
     @GetMapping("/talla/{talla}")
     public ResponseEntity<List<Jean>> buscarPorTalla(@PathVariable String talla) {
         List<Jean> listaTallas = jeanService.buscarPorTalla(talla);
