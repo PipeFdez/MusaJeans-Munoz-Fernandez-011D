@@ -52,3 +52,7 @@ spring:
           uri: http://localhost:8085
           predicates:
             - Path=/api/v1/detalle-venta/**
+        - id: service-admin
+          uri: http://localhost:8088
+          predicates:
+            - Path=/api/v1/administrador/**
