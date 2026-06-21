@@ -86,6 +86,13 @@ spring:
           predicates:
             - Path=/api/v1/pago/**
 
+        - id: service-envio
+          uri: http://localhost:8092
+          predicates:
+            - Path=/api/v1/pago/**
+
+
+
 eureka:
   client:
     register-with-eureka: false
@@ -105,3 +112,6 @@ springdoc:
         
       - name: Servicio Pago
         url: /api/v1/pago/api-docs
+                
+      - name: Servicio Envio
+        url: /api/v1/envio/api-docs
