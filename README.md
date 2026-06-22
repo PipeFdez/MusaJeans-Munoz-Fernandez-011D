@@ -1,131 +1,81 @@
-# Proyecto Musa Jeans
-Proyecto desarrollado utilizando arquitectura de microservicios para la gestión de una tienda de jeans online.
+# Musa Jeans - Microservicios
 
-El sistema permite:
-  * Gestión de jeans.
-  * Control de inventario.
-  * Gestión de clientes.
-  * Gestión de carrito de compras.
-  * Gestión de ventas.
+## Descripción del proyecto
 
-# Arquitectura utilizada
-El proyecto fue desarrollado utilizando una arquitectura basada en microservicios.
-Cada microservicio posee:
-  * Su propia lógica.
-  * Sus propios controladores.
-  * Sus propias entidades.
-  * Su propia base de datos.
-  * Comunicación mediante API REST.
+El proyecto **Musa Jeans** es una arquitectura basada en microservicios desarrollada con Spring Boot, orientada a la gestión de una tienda de ropa. El sistema está dividido en servicios independientes como Cliente, Jean, Pago y Envío, permitiendo escalabilidad, mantenimiento independiente y comunicación mediante API REST.
 
-# Tecnologías utilizadas
-  * Java
-  * Spring Boot
-  * Spring Data JPA
-  * Spring Web
-  * Spring Cloud Gateway
-  * WebClient
-  * Lombok
-  * MySQL
-  * Postman
-  * GitHub
-  * Visual Studio Code
+---
 
-# Microservicios desarrollados
+## Bibliotecas utilizadas
 
-  1. service-jean
-  Microservicio encargado de la gestión de jeans.
-  Puerto = 8081
-  Base de datos = bd_jeans
+- Spring Boot Starter Web  
+- Spring Boot Starter Data JPA  
+- MySQL Driver  
+- Lombok  
+- Springdoc OpenAPI (Swagger)  
+- Spring Boot Starter Test  
 
-  2. service-inventario
-  Microservicio encargado del control de stock.
-  Puerto = 8082
-  Base de datos = bd_inventario
+---
 
-  3. service-cliente
-  Microservicio encargado de la gestión de clientes.
-  Puerto = 8083
-  Base de datos = bd_cliente
+## Herramientas de instalación
 
-  4. service-carrito
-  Microservicio encargado del carrito de compras.
-  Puerto = 8084
-  Base de datos = bd_carrito
+- Java 17 o superior  
+- Maven  
+- MySQL Server  
+- IntelliJ IDEA o Eclipse  
+- Postman (para pruebas de API)  
+- Git (opcional para control de versiones)  
 
-  5. service-venta
-  Microservicio encargado de las ventas.
-  Puerto = 8085
-  Base de datos = bd_venta
+---
 
-# Datos de prueba
+## Ejemplos de rutas API REST
 
-# Cliente
-{
-  "rut": "20051806-3",
-  "nombre": "Felipe Fernández",
-  "correo": "felipe@gmail.com",
-  "direccion": "La galaxia #162, Maipú"
-}
+### Microservicio Cliente
 
-# Modelo
-{
-  "id" : 1,
-  "nombre": "Skinny"
-}
+- Obtener todos los clientes  
+  `GET http://localhost:8080/api/v1/cliente`
 
-# Marca
-{
-  "id" : 1,
-  "nombre": "Levis"
-}
+- Obtener cliente por RUT  
+  `GET http://localhost:8080/api/v1/cliente/{rut}`
 
-# Jean
-{
-  "precio": 29990,
-  "color": "Azul",
-  "talla": "42",
-  "tiro": "Alto",
-  "descripcion": "Jean slim fit azul",
-  "marca": {
-    "id": 1
-  },
-  "modelo": {
-    "id": 1
-  }
-}
+- Crear cliente  
+  `POST http://localhost:8080/api/v1/cliente`
 
-# Inventario
-{
-   "stock": 200,
-   "jeanId": 1
-}
+- Eliminar cliente  
+  `DELETE http://localhost:8080/api/v1/cliente/{id}`
 
-# Carrito
-{
-  "precioTotal": 59980,
-  "fecha": "2026-05-13",
-  "rutCliente": "20051806-3"
-}
+---
 
-# Producto carrito
-{
-  "cantidad": 2,
-  "precio": 29990,
-  "idCarrito": 1,
-  "idJean": 1
-}
+### Microservicio Jean
 
-# Venta
-{
-  "fecha": "2026-05-13",
-  "total": 74980,
-  "rutCliente": "20051806-3"
-}
+- Obtener todos los jeans  
+  `GET http://localhost:8081/api/v1/jean`
 
-# Detalle venta
-{
-  "cantidad": 2,
-  "subTotal": 59980,
-  "idJean": 1,
-  "idVenta": 1
-}
+- Crear jean  
+  `POST http://localhost:8081/api/v1/jean`
+
+---
+
+### Microservicio Pago
+
+- Obtener todos los pagos  
+  `GET http://localhost:8082/api/v1/pago`
+
+- Crear pago  
+  `POST http://localhost:8082/api/v1/pago`
+
+- Eliminar pago  
+  `DELETE http://localhost:8082/api/v1/pago/{id}`
+
+---
+
+## Ejemplos de Swagger
+
+- Cliente Swagger  
+  http://localhost:8080/swagger-ui.html
+
+- Jean Swagger  
+  http://localhost:8081/swagger-ui.html
+
+- Pago Swagger  
+  http://localhost:8082/swagger-ui.html
