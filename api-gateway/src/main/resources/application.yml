@@ -96,6 +96,11 @@ spring:
           predicates:
             - Path=/api/v1/deseo/**
 
+        - id: service-reporte
+          uri: http://localhost:8087
+          predicates:
+            - Path=/api/v1/reporte/** 
+
 eureka:
   client:
     register-with-eureka: false
@@ -121,3 +126,4 @@ springdoc:
 
       - name: Servicio Deseos
         url: /api/v1/deseo/api-docs
+                   

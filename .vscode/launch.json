@@ -2,6 +2,7 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Spring Boot-ApiGatewayApplication<api-gateway>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -73,6 +74,16 @@
             "projectName": "service_pago",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+=======
+            "name": "Spring Boot-ServiceReporteApplication<service-reporte>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_reporte.ServiceReporteApplication",
+            "projectName": "service-reporte",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51246 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=service-reporte"
+>>>>>>> service-reporte
         },
         {
             "type": "java",
@@ -86,6 +97,7 @@
         },
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Spring Boot-ServiceDeseosApplication<service-deseos>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -94,6 +106,25 @@
             "args": "",
             "envFile": "${workspaceFolder}/.env",
             "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=62697 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=service-deseos"
+=======
+            "name": "Spring Boot-ApiGatewayApplication<api-gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.api_gateway.ApiGatewayApplication",
+            "projectName": "api-gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceClienteApplication<service-cliente>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_cliente.ServiceClienteApplication",
+            "projectName": "service-cliente",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+>>>>>>> service-reporte
         }
     ]
 }
