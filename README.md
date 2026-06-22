@@ -49,33 +49,33 @@ El proyecto **Musa Jeans** es una arquitectura basada en microservicios desarrol
 ### Microservicio Jean
 
 - Obtener todos los jeans  
-  `GET http://localhost:8081/api/v1/jean`
+  `GET http://localhost:8080/api/v1/jean`
 
 - Crear jean  
-  `POST http://localhost:8081/api/v1/jean`
+  `POST http://localhost:8080/api/v1/jean`
 
 ---
 
 ### Microservicio Pago
 
 - Obtener todos los pagos  
-  `GET http://localhost:8082/api/v1/pago`
+  `GET http://localhost:8080/api/v1/pago`
 
 - Crear pago  
-  `POST http://localhost:8082/api/v1/pago`
+  `POST http://localhost:8080/api/v1/pago`
 
 - Eliminar pago  
-  `DELETE http://localhost:8082/api/v1/pago/{id}`
+  `DELETE http://localhost:8080/api/v1/pago/{id}`
 
 ---
 
 ## Ejemplos de Swagger
 
 - Cliente Swagger  
-  http://localhost:8080/swagger-ui.html
+  http://localhost:8083/swagger-ui.html
 
 - Jean Swagger  
   http://localhost:8081/swagger-ui.html
 
 - Pago Swagger  
-  http://localhost:8082/swagger-ui.html
+  http://localhost:8091/swagger-ui.html
