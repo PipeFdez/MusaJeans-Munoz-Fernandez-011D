@@ -8,7 +8,8 @@
             "mainClass": "com.musa_jeans.api_gateway.ApiGatewayApplication",
             "projectName": "api-gateway",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=60056 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=api-gateway"
         },
         {
             "type": "java",
@@ -18,7 +19,8 @@
             "mainClass": "com.musa_jeans.service_cliente.ServiceClienteApplication",
             "projectName": "service-cliente",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=60058 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=service-cliente"
         },
         {
             "type": "java",
@@ -28,7 +30,8 @@
             "mainClass": "com.musa_jeans.service_inventario.ServiceInventarioApplication",
             "projectName": "service-inventario",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=60060 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=service-inventario"
         },
         {
             "type": "java",
@@ -37,6 +40,47 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.musa_jeans.service_jean.ServiceJeanApplication",
             "projectName": "service-jean",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=60067 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=service-jean"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceCarritoApplication<service_carrito>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_carrito.ServiceCarritoApplication",
+            "projectName": "service_carrito",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceEnvioApplication<service_envio>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_envio.ServiceEnvioApplication",
+            "projectName": "service_envio",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServicePagoApplication<service_pago>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_pago.ServicePagoApplication",
+            "projectName": "service_pago",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ServiceVentaApplication<service_venta>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.musa_jeans.service_venta.ServiceVentaApplication",
+            "projectName": "service_venta",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
